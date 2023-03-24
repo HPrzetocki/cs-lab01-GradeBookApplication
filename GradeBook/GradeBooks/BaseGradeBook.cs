@@ -207,15 +207,14 @@ namespace GradeBook.GradeBooks
 
         public virtual char GetLetterGrade(double averageGrade)
         {
-            if (Students.Count <= 5) throw (new System.InvalidOperationException());
+            
             if (Students.Count() < 5)
             {
                 throw (new System.InvalidOperationException());
             }
             else
             {
-                if (averageGrade >= Students.Count() / 5)
-                    double[] table = new double[Students.Count()];
+                double[] table = new double[Students.Count()];
                 int i = 0;
                 foreach (var student in Students)
                 {
@@ -245,17 +244,14 @@ namespace GradeBook.GradeBooks
                 }
                 if (pozycja >= Students.Count() * 0.8)
                     return 'A';
-                else if (averageGrade >= (Students.Count() / 5) * 2)
                 else if (pozycja >= Students.Count() * 0.6)
-                            return 'B';
-                        else if (averageGrade >= (Students.Count() / 5) * 3)
+                    return 'B';
                 else if (pozycja >= Students.Count() * 0.4)
-                                    return 'C';
-                                else if (averageGrade >= (Students.Count() / 5) * 4)
+                    return 'C';
                 else if (pozycja >= Students.Count() * 0.2)
-                                            return 'D';
-                                        else
-                                            return 'F';
+                    return 'D';
+                else
+                    return 'F';
  
             }
         }
