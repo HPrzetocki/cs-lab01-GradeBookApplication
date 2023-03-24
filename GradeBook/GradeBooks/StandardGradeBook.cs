@@ -13,7 +13,6 @@ namespace GradeBook.GradeBooks
         {
             Name = name;
             Type = Enums.GradeBookType.Standard;
-
         }
 
     }
